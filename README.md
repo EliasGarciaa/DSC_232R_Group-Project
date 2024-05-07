@@ -28,9 +28,7 @@ Preprocessing involves multiple steps to (1) clean, (2) transform, and (3) prepa
 ### 2. Creating a Spark Session
 ### 3. Loading Data
 ### 4. Exploring Data
-### 5. Data Cleaning
-### 6. Feature Engineering
-### 7. Data Transformation
-### 8. Scaling and Normalization
-### 9. Splitting Data
-### 10. (Optional) Persist Data
+### 5. Data Cleaning/Feature Engineering
+### 6. Data Transformation
+### 7. Scaling and Normalization
+### 8. Splitting Data
