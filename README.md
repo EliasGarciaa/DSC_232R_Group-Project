@@ -20,7 +20,20 @@ Precipitation(in) - Rain amount (in inches)<br/>
 Weather_Event - Weather event such as rain, snow, hail, thunderstorm, etc.<br/>
 
 ## Environment Setup Instructions
-Recommended to run on 10 cores and 10 gb/node
+Recommended Hardware requirements: 10 CPU cores with 10GB of ram per node. <br/>
+Recommend Software: Jupyter Notebook <br/>
+Libraries used: `pyspark`, `pandas` <br/>
+
+To install the necessary libraries, run the following commands in your environment:
+```bash
+pip install pyspark
+```
+
+```bash
+pip install pandas
+```
+
+
 
 ## Preprocessing Data
 Preprocessing involves multiple steps to (1) clean, (2) transform, and (3) prepare the "US Traffic Congestions (2016-2022)" Dataset: 
