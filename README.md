@@ -58,3 +58,12 @@ Scaling/Normalization, along with creating parquet dfs, can be used prior to cre
 This is a step completed prior to bulding a ML model which splits data into training and test sets
 ### 9. Data Visualization
 Access the previously created parquet files and create scatter plots to visualize any assocation between features of interest.
+
+## Model Building and Evaluation
+
+### 1. Linear Regression Model
+Created a linear regression model and evaluated the train RMSE vs the test RMSE
+
+### 2. Random Forest and Gradient Boosting
+Utilized and compared Random Forest and gradient boosting model to predict congestion speed 
+
