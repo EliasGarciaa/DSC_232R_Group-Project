@@ -62,10 +62,10 @@ Access the previously created parquet files and create scatter plots to visualiz
 ## Model Building and Evaluation
 
 ### 1. Linear Regression Model
-Created a linear regression model and evaluated the train RMSE vs the test RMSE
+Created a linear regression model on Pressure vs Congestion and evaluated the train RMSE vs the test RMSE
 
 ### 2. Random Forest and Gradient Boosting
 Utilized and compared Random Forest and gradient boosting model to predict congestion speed 
 
-Possible Improvements:
-experiment and create regression models using different features in the dataset
+### Possible Improvements:
+1. experiment and create regression models using different features in the dataset
