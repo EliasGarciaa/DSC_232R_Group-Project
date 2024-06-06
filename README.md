@@ -2,6 +2,8 @@
 Data Exploration on US Traffic Congestion<br/>
 Dataset: https://www.kaggle.com/datasets/sobhanmoosavi/us-traffic-congestions-2016-2022
 
+# Introduction:
+
 # Features used:
 ID - Unique Identifier for data<br/>
 Severity - Ranges 0 to 4 - Severity of event<br/>
@@ -15,3 +17,12 @@ WindSpeed(mph) - Speed of the wind (in miles per hour)<br/>
 Precipitation(in) - Rain amount (in inches)<br/>
 Weather_Event - Weather event such as rain, snow, hail, thunderstorm, etc.<br/>
 
+# Methods and Code:
+
+# Results:
+
+# Discussion:
+
+# Conclusion:
+
+# Statement of Collaboration:
