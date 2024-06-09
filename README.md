@@ -97,14 +97,10 @@ The data exploration consists of several parts:
   
 # 5. Discussion
 ## Data Exploration 
--  
--
--
+-  Using this data set to determine severity and other important factors, such as delays due to traffic conditions, can be very insightful as we drive daily. This data set had information on all weather conditions, such as ongoing weather events, visibility, wind speed, and even precipitation. We wanted to use features that were easily measurable and had enough data to impact the models we were using significantly. In addition to weather data, the dataset included detailed information such as the time and location of the events and the amount of time it delayed their usual commute. Analyzing these aspects allowed us to identify patterns and correlations between weather conditions and traffic severity. For instance, we could determine if certain weather conditions led to more severe accidents or longer delays.
 
 ## Preprocessing
-- 
--
-- 
+- After thoroughly examining our dataset, we identified several preprocessing steps to ensure data quality and relevance. First, we handled missing values by dropping the Weather_Event column, as 94% of its entries were null, rendering it unusable for meaningful analysis. We also addressed redundancy by removing duplicate records, which helped maintain the dataset’s integrity and accuracy. We excluded columns such as city, county, state, and country since the latitude and longitude columns already provided precise geographical information. Additionally, we processed the StartTime column to retain only the hour of occurrence. This transformation was aimed at analyzing the impact of different times of the day on traffic patterns, enabling us to identify peak traffic periods and understand how the time of day influences traffic flow. For efficient storage and retrieval, we used Parquet files, which lead to lower query and memory costs, especially since we had a large amount of data. These preprocessing steps ensured our dataset was clean, relevant, and formatted for accurate analysis, laying a solid foundation for subsequent analysis and model building.
 
 ## Model 1
 - 
@@ -124,18 +120,18 @@ The data exploration consists of several parts:
 # 6. Conclusion
 
 # 7. Statement of Collaboration
-Name: Nikolai Pastore
-Title:
-Contribution:
+Name: Nikolai Pastore<br/>
+Title: Teammate 1<br/>
+Contribution: <br/>
 
-Name: Elias Garcia
-Title:
-Contribution:
+Name: Elias Garcia<br/>
+Title: Teammate 2<br/>
+Contribution: <br/>
 
-Name: Jackie Gao
-Title:
-Contribution:
+Name: Jackie Gao<br/>
+Title: Teammate 3<br/>
+Contribution: <br/>
 
-Name:
-Title:
-Contribution:
+Name: Daniel Lan<br/>
+Title: Teammate 4<br/>
+Contribution: <br/>
