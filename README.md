@@ -36,7 +36,7 @@ The dataset consists of the following columns:
 
 The data exploration consists of several parts:
 
--  Printing all of the Columns along with first row values to look at data types and example values
+- Printing all of the Columns along with first row values to look at data types and example values
 - Printing the Schema of the dataset to obtain a complete list of features
 - Defining the shape of the dataset by printing the number of Columns and Rows
 
@@ -68,16 +68,6 @@ The data exploration consists of several parts:
 - 
 
 # 4. Results
-## 4.1 Data Exploration 
--  
--
--
-
-## 4.2 Preprocessing
-- 
--
-- 
-
 ## 4.3 Model 1
 - 
 - 
