@@ -8,10 +8,13 @@ Our group chose to analyze data relating to traffic congestion patternsin the US
 # 2. Figures 
 
 Source: 
-*Figure 1:*
+*Figure 1: Feature Importance*
+![image](https://github.com/EliasGarciaa/DSC_232R_Group-Project/assets/29644567/448a0863-d0ed-4e48-9f96-c645b4b6d38e)
 
 Source: 
-*Figure 2:*
+*Figure 2: Severity and distribution of traffic delays*
+![image](https://github.com/EliasGarciaa/DSC_232R_Group-Project/assets/29644567/ef679903-d5ab-416e-9635-37b56d2f07e5)
+
 
 # 3. Methods
 ## 3.1 Data Exploration 
