@@ -67,11 +67,6 @@ The data exploration consists of several parts:
 - 
 - 
 
-## 3.5 Model 3
-- 
-- 
-- 
-
 # 4. Results
 ## 4.1 Data Exploration 
 -  
@@ -89,11 +84,6 @@ The data exploration consists of several parts:
 - 
 
 ## 4.4 Model 2
-- 
-- 
-- 
-
-## 4.5 Model 3
 - 
 - 
 - 
@@ -115,12 +105,8 @@ The data exploration consists of several parts:
 - 
 - 
 
-## Model 3
-- 
-- 
-- 
-
 # 6. Conclusion
+-
 
 # 7. Statement of Collaboration
 Name: Nikolai Pastore<br/>
