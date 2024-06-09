@@ -51,17 +51,114 @@ The data exploration consists of several parts:
 ## 3.3 Model 1
 ### Data Preprocessing
 - The data preprocessing phase involved loading preprocessed datasets and merging relevant columns from two dataframes: accident_df and weather_df. Rows with missing values were removed to ensure a complete dataset for model training
+```
+# Load the preprocessed data
+accident_df = pd.read_parquet(os.getcwd() + "/parquet_data/accident_df.parquet")
+weather_df = pd.read_parquet(os.getcwd() + "/parquet_data/weather_table.parquet")
+
+# Merge relevant columns from accident_df and weather_df
+merged_df = accident_df[['ID', 'Congestion_Speed']].merge(
+    weather_df[['ID', 'WeatherTimeStamp', 'Pressure(in)']], on='ID', how='inner')
+
+# Drop rows with missing values
+merged_df.dropna(inplace=True)
+```
 ### Train-Test Split
 - The data was split into training and testing sets with an 80-20 split. The feature used was Pressure(in), and the target variable was Congestion_Speed.
+```
+from sklearn.model_selection import train_test_split
+
+# Splitting the data into train and test sets
+X = merged_df[['Pressure(in)']]
+y = merged_df['Congestion_Speed']
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+```
 ### Feature Scaling
 - Standard scaling was applied to the features to ensure that they have a mean of 0 and a standard deviation of 1, which is essential for some machine learning algorithms to perform optimally
+```
+from sklearn.preprocessing import StandardScaler
+
+# Preprocessing: Scaling features
+scaler = StandardScaler()
+X_train_scaled = scaler.fit_transform(X_train)
+X_test_scaled = scaler.transform(X_test)
+```
 ### Model Training and Evaluation
 - A Linear Regression model was the first to be trained on the scaled dataset. The performance of the model was evaluated using Root Mean Square Error (RMSE) for both the training and test sets
+```
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error
+import numpy as np
+
+# Train the first model: Linear Regression
+model = LinearRegression()
+model.fit(X_train_scaled, y_train)
+
+# Predictions
+train_preds = model.predict(X_train_scaled)
+test_preds = model.predict(X_test_scaled)
+
+# Evaluation: Calculate RMSE
+train_rmse = np.sqrt(mean_squared_error(y_train, train_preds))
+test_rmse = np.sqrt(mean_squared_error(y_test, test_preds))
+print("Train RMSE:", train_rmse)
+print("Test RMSE:", test_rmse)
+```
 - A Random Forest Regressor was then trained with 100 estimators. The model's performance was also evaluated using RMSE for both the training and test datasets
+```
+from sklearn.ensemble import RandomForestRegressor
+
+# Training the Random Forest model
+rf_model = RandomForestRegressor(n_estimators=100, random_state=42)
+rf_model.fit(X_train_scaled, y_train)
+
+# Predictions
+rf_train_preds = rf_model.predict(X_train_scaled)
+rf_test_preds = rf_model.predict(X_test_scaled)
+
+# Evaluation: Calculate RMSE
+rf_train_rmse = np.sqrt(mean_squared_error(y_train, rf_train_preds))
+rf_test_rmse = np.sqrt(mean_squared_error(y_test, rf_test_preds))
+print("Random Forest Train RMSE:", rf_train_rmse)
+print("Random Forest Test RMSE:", rf_test_rmse)
+```
 - Finally, a Gradient Boosting Regressor with 100 estimators was trained. RMSE was calculated for both training and test sets to evaluate the model's performance
+```
+from sklearn.ensemble import GradientBoostingRegressor
+
+# Train the Gradient Boosting model
+gb_model = GradientBoostingRegressor(n_estimators=100, random_state=42)
+gb_model.fit(X_train_scaled, y_train)
+
+# Predictions
+gb_train_preds = gb_model.predict(X_train_scaled)
+gb_test_preds = gb_model.predict(X_test_scaled)
+
+# Evaluation: Calculate RMSE
+gb_train_rmse = np.sqrt(mean_squared_error(y_train, gb_train_preds))
+gb_test_rmse = np.sqrt(mean_squared_error(y_test, gb_test_preds))
+print("Gradient Boosting Train RMSE:", gb_train_rmse)
+print("Gradient Boosting Test RMSE:", gb_test_rmse)
+```
 ### Comparison of Model Performance
 - The RMSE values for the Linear Regression, Random Forest, and Gradient Boosting models were compared to evaluate how each model generalizes to new, unseen data. The models showed similar RMSE values for both the training and test datasets, indicating good generalization and minimal overfitting
+```
+# RMSE values for the models
+models = ['Linear Regression', 'Random Forest', 'Gradient Boosting']
+train_rmse = [1.1714642543584903, 1.1683265209258846, 1.1686818156484327]
+test_rmse = [1.1699850428341243, 1.166988589658763, 1.1671017369772374]
 
+# Plotting the fitting graph
+plt.figure(figsize=(10, 6))
+plt.plot(models, train_rmse, label='Train RMSE', marker='o', color='red')
+plt.plot(models, test_rmse, label='Test RMSE', marker='o', color='green')
+plt.xlabel('Model Complexity')
+plt.ylabel('RMSE')
+plt.title('Fitting Graph: Train vs Test Error Across Models')
+plt.legend()
+plt.grid(True)
+plt.show()
+```
 ## 3.4 Model 2
 ### Data Preprocessing
 - The data preprocessing phase involved loading preprocessed datasets and merging relevant columns from the dataframes: accident_df, testing_df, location_df, and weather_df.
