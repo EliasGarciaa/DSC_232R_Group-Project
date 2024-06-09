@@ -63,15 +63,19 @@ The data exploration consists of several parts:
 - The RMSE values for the Linear Regression, Random Forest, and Gradient Boosting models were compared to evaluate how each model generalizes to new, unseen data. The models showed similar RMSE values for both the training and test datasets, indicating good generalization and minimal overfitting
 
 ## 3.4 Model 2
-- 
-- 
-- 
+### Data Preprocessing
+- The data preprocessing phase involved loading preprocessed datasets and merging relevant columns from the dataframes: accident_df, testing_df, location_df, and weather_df.
+- One hot encoding was used to convert the categorical 'Weather Condition' Column into binary encoding for future processing
+- The 'StartTime' column was transformed into a datetime object, and the hours were extracted into a separate column
+### Feature Scaling
+- PCA was applied to the one-hot encoded weather condition data to reduce its dimensionality and generate compact vector representations for subsequent processing
+### Train-Test Split
+- The dataset was divided into training and testing sets, with 80% allocated to training and 20% to testing. The features included Severity, Start_Lat, Start_Lng, StartHour, and PCA-transformed components. The target variable was Congestion_Speed.
+### Model Training and Evaluation
+- An XGBoost model was employed to classify the congestion speed using the transformed features. The model's performance was assessed by plotting the error against the number of boosting rounds. Additionally, feature importance analysis was conducted to understand the contribution of each feature to the model's predictions
 
 # 4. Results
 ## 4.3 Model 1
-- 
-- 
-- 
 
 ## 4.4 Model 2
 - 
