@@ -33,14 +33,17 @@ The dataset consists of the following columns:
 
 The data exploration consists of several parts:
 
--  
--
--
+-  Printing all of the Columns along with first row values to look at data types and example values
+- Printing the Schema of the dataset to obtain a complete list of features
+- Defining the shape of the dataset by printing the number of Columns and Rows
 
 ## 3.2 Preprocessing
-- 
--
-- 
+- Missing values are handled by being dropped from the main dataframe
+- Duplicates are removed from the main dataframe
+- Specific fields/features are filtered into lists
+- Columns are cleaned and updated by adding filtering expressions
+- Features are grouped together for dimensionality reduction and gathering domain-specific knowledge
+- Efficient data storage, performance, schema evolution, interoperability, and cost efficiency is ensured by creating Parquet files
 
 ## 3.3 Model 1
 - 
