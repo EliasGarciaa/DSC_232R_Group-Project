@@ -339,7 +339,7 @@ Contribution: Wrote the majority of the code for Model 1 and authored the corres
 
 Name: Jackie Gao<br/>
 Title: Teammate 3<br/>
-Contribution: <br/>
+Contribution: Worked on data exploration and data cleaning/filtering. Graphed out traffic delays over time and correlation map to help with analysis. Attempted to create a k-nn model and clustering, however, could not achieve past 50% accuracy after tweaking parameters and n-values. Worked with whole group to finalize report. Provided feedback and collaborated with team members throughout project's duration. <br/>
 
 Name: Daniel Lan<br/>
 Title: Teammate 4<br/>
