@@ -173,9 +173,32 @@ merged_df['StartHour'] = merged_df['StartTime'].dt.hour
 ```
 ### Feature Scaling
 - PCA was applied to the one-hot encoded weather condition data to reduce its dimensionality and generate compact vector representations for subsequent processing
+- The number of PCA components was determined by plotting the explained variance percentage for each component
+
+### Graphing the percentage of variance explained to determine how many components captures most of the data variance
 ```
-merged_df['StartTime'] = pd.to_datetime(merged_df['StartTime'])
-merged_df['StartHour'] = merged_df['StartTime'].dt.hour
+pca = PCA()
+pca.fit(encoded_df)
+
+# Calculate cumulative explained variance ratio
+cumulative_variance = np.cumsum(pca.explained_variance_ratio_)
+
+# Plotting the cumulative explained variance ratio
+plt.figure(figsize=(10, 6))
+plt.plot(range(1, len(cumulative_variance) + 1), cumulative_variance)
+plt.title('Percentage of Variance Explained')
+plt.xlabel('Number of Components')
+plt.ylabel('Cumulative Variance Explained')
+plt.grid(True)
+plt.show()
+```
+### PCA for first 40 components
+```
+pca = PCA(n_components= 40)
+pca_result = pca.fit_transform(encoded_df)
+
+# Convert the transformed data back to a DataFrame
+pca_df = pd.DataFrame(data=pca_result, columns=[f"PC{i+1}" for i in range(pca_result.shape[1])])
 ```
 ### Train-Test Split
 - The dataset was divided into training and testing sets, with 80% allocated to training and 20% to testing. The features included Severity, Start_Lat, Start_Lng, StartHour, and PCA-transformed components. The target variable was Congestion_Speed.
