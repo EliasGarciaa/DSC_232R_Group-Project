@@ -327,4 +327,4 @@ Contribution: <br/>
 
 Name: Daniel Lan<br/>
 Title: Teammate 4<br/>
-Contribution: Created Model 2 XGBoost model in order to predict congestion speed. Displayed results and showed findings to groupmates. Also collaborated and communicated with the group regarding the whole project and worked together as a group to finish the final report. <br/>
+Contribution: Created Model 2 XGBoost in order to predict congestion speed. Displayed results and showed findings to groupmates. Also collaborated and communicated with the group regarding the whole project and worked together as a group to finish the final report. <br/>
