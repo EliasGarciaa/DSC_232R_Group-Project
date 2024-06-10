@@ -171,7 +171,7 @@ encoded_df = pd.DataFrame(encoded_data, columns=encoder.get_feature_names_out(['
 merged_df['StartTime'] = pd.to_datetime(merged_df['StartTime'])
 merged_df['StartHour'] = merged_df['StartTime'].dt.hour
 ```
-### Feature Scaling
+### Feature Transformation
 - PCA was applied to the one-hot encoded weather condition data to reduce its dimensionality and generate compact vector representations for subsequent processing
 - The number of PCA components was determined by plotting the explained variance percentage for each component
 
