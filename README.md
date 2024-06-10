@@ -143,15 +143,104 @@ test_rmse = [1.1699850428341243, 1.166988589658763, 1.1671017369772374]
 ## 3.4 Model 2
 ### Data Preprocessing
 - The data preprocessing phase involved loading preprocessed datasets and merging relevant columns from the dataframes: accident_df, testing_df, location_df, and weather_df.
+```
+accident_df = pd.read_parquet(os.getcwd() + "/parquet_data/accident_df.parquet")
+weather_df = pd.read_parquet(os.getcwd() + "/parquet_data/weather_table.parquet")
+testing_df = pd.read_parquet(os.getcwd() + "/parquet_data/testing_df.parquet")
+location_df = pd.read_parquet(os.getcwd() + "/parquet_data/location_table.parquet")
+
+intermediate_df = pd.merge(accident_df[["ID", "Severity", "Start_Lat", "Start_Lng","StartTime"]],weather_df[["ID", "Weather_Conditions"]], on="ID" , how = "inner")
+intermediate_df = pd.merge(location_df[["ID", "ZipCode", "LocalTimeZone"]], intermediate_df, on = "ID" , how = "inner")
+merged_df = pd.merge(intermediate_df, testing_df[["ID", "Visibility(mi)", "Congestion_Speed"]], on ="ID", how = "inner")
+```
 - One hot encoding was used to convert the categorical 'Weather Condition' Column into binary encoding for future processing
+```
+#encode weather conditions using one hot encoding
+encoder = OneHotEncoder(sparse_output=False)  # Use sparse=True to return a sparse matrix
+
+# Fit and transform the data
+encoded_data = encoder.fit_transform(merged_df[['Weather_Conditions']])
+
+# Create a DataFrame with the encoded data
+encoded_df = pd.DataFrame(encoded_data, columns=encoder.get_feature_names_out(['Weather_Conditions']))
+```
 - The 'StartTime' column was transformed into a datetime object, and the hours were extracted into a separate column called StartHour
+```
+merged_df['StartTime'] = pd.to_datetime(merged_df['StartTime'])
+merged_df['StartHour'] = merged_df['StartTime'].dt.hour
+```
 ### Feature Scaling
 - PCA was applied to the one-hot encoded weather condition data to reduce its dimensionality and generate compact vector representations for subsequent processing
+```
+merged_df['StartTime'] = pd.to_datetime(merged_df['StartTime'])
+merged_df['StartHour'] = merged_df['StartTime'].dt.hour
+```
 ### Train-Test Split
 - The dataset was divided into training and testing sets, with 80% allocated to training and 20% to testing. The features included Severity, Start_Lat, Start_Lng, StartHour, and PCA-transformed components. The target variable was Congestion_Speed.
+
 ### Model Training and Evaluation
 - An XGBoost model was employed to classify the congestion speed (slow,moderate,fast) using the transformed features. The model's performance was assessed by plotting the error against the number of boosting rounds. Additionally, feature importance analysis was conducted to understand the contribution of each feature to the model's predictions
+```
+import xgboost as xgb
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_squared_error
+# Convert the data into DMatrix format
+dtrain = xgb.DMatrix(X_train, label=y_train)
+dtest = xgb.DMatrix(X_test, label=y_test)
 
+params = {
+    'objective': 'multi:softmax',  # Multiclass classification
+    'num_class': 3,  # Number of classes (0, 1, 2)
+    'eta': 0.3,
+    'max_depth': 8,
+    # 'subsample': 0.8,
+    # 'colsample_bytree': 0.8,
+    'reg_lambda': 1.0,              # L2 regularization term on weights
+    'eval_metric': 'merror'  # Classification error
+}
+num_round = 1000
+evals = [(dtrain, 'train'), (dtest, 'eval')]
+evals_result = {}  # Dictionary to store evaluation results
+
+# Train the model
+bst = xgb.train(params, dtrain, num_boost_round=num_round, evals=evals, evals_result=evals_result, verbose_eval=False)
+
+# Predict on the test set
+preds = bst.predict(dtest)
+
+# Evaluate the model's performance
+accuracy = accuracy_score(y_test, preds)
+print(f"Accuracy: {accuracy}")
+
+# Print classification report
+print(classification_report(y_test, preds))
+```
+```
+train_error = evals_result['train']['merror']
+val_error = evals_result['eval']['merror']
+
+train_accuracy = [error for error in train_error]
+val_accuracy = [error for error in val_error]
+
+# Plotting the error
+plt.figure(figsize=(10, 6))
+plt.plot(train_accuracy, label='Train Error')
+plt.plot(val_accuracy, label='Validation Error')
+plt.xlabel('Number of Boosting Rounds')
+plt.ylabel('Error')
+plt.title('XGBoost Error over Boosting Rounds')
+plt.legend()
+plt.grid(True)
+plt.show()
+```
+```
+from xgboost import plot_importance
+import matplotlib.pyplot as plt
+plt.figure(figsize=(10, 8))
+plot_importance(bst, max_num_features=10)
+plt.title('Feature Importance')
+plt.show()
+```
 # 4. Results
 ## 4.3 Model 1
 
