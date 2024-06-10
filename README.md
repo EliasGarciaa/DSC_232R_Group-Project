@@ -246,6 +246,30 @@ plt.show()
 ```
 # 4. Results
 ## 4.3 Model 1
+This section presents the results obtained from the various models trained to predict congestion speed using atmospheric pressure data. The results are structured to correspond to the methods outlined in the previous section. Each model's performance is reported in terms of Root Mean Square Error (RMSE) for both training and testing datasets. Relevant figures are included to illustrate the results.
+
+### Linear Regression
+The Linear Regression model was evaluated using RMSE. The training RMSE was 1.171, and the test RMSE was 1.170.
+- Train RMSE: 1.171
+- Test RMSE: 1.170
+<img width="442" alt="Prediction vs Actuals - Linear Regression" src="https://github.com/EliasGarciaa/DSC_232R_Group-Project/assets/168691382/4d5e9c37-3217-44b9-923c-029caa9b1440">
+
+### Random Forest
+The Random Forest model exhibited slightly lower RMSE values compared to the Linear Regression model, with a training RMSE of 1.168 and a test RMSE of 1.167.
+- Train RMSE: 1.168
+- Test RMSE: 1.167
+<img width="437" alt="Prediction vs Actuals - Random Forest" src="https://github.com/EliasGarciaa/DSC_232R_Group-Project/assets/168691382/372b11c6-eda4-4aa4-a780-b39e7a0173b0">
+
+### Gradient Boosting
+The Gradient Boosting model produced very similar results to the Random Forest model, with a training RMSE of 1.169 and a test RMSE of 1.167.
+- Train RMSE: 1.169
+- Test RMSE: 1.167
+<img width="433" alt="Prediction vs Actuals - Gradient Boosting" src="https://github.com/EliasGarciaa/DSC_232R_Group-Project/assets/168691382/adfa1793-7e89-469b-b6d6-7811c91a7436">
+
+### Summary of Model 1 Performance
+The performance of the models, as measured by RMSE, shows that all three models have similar predictive accuracy. The close RMSE values for both training and test datasets across models suggest that there is minimal overfitting, and each model generalizes well to new data
+
+<img width="432" alt="Train vs Test Error Across Models" src="https://github.com/EliasGarciaa/DSC_232R_Group-Project/assets/168691382/0f93cebd-c9a2-455e-b601-932961c2aa51">
 
 ## 4.4 Model 2
 - 
