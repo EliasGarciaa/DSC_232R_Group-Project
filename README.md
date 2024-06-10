@@ -5,13 +5,11 @@ Dataset: https://www.kaggle.com/datasets/sobhanmoosavi/us-traffic-congestions-20
 # 1. Introduction
 Our group chose to analyze data relating to traffic congestion patternsin the US.  This dataset provided traffic congestion data over a 6 year period, which would allow us enough data to begin creating a prediction model.  Traffic congestion is extremely important to understand for things like urban planning and transportation efficiency, which would greatly benfit major cities like New York, Los Angeles, and even San Diego.  This project is exciting to research because it uses large amounts of real world data to hopefully find solutions to major problems that affect the entire country on a daily basis.  There is a possibility of discovering patterns or insight that could lead to actionable solutions for reducing traffic related problems.  The broader impact of having a good predictive model for this project could have several major impacts.  One of the most important would be quality of life improvements.  Many people would receive hours of their week back that could be used on anything else that they may find important in their life.  Another impact would be economic efficiency.  Many businesses rely on road transportation for people or products.  More efficient traffic would mean less time transporting stuff that may be costing them more money the longer it is in transit.  There would also be major positive environmental benfits from reducing traffic congestion.  Cars would be spending less time on the road going the same distances which would lead to lower emissions, creating a healthier environment.  These impacts are important because they help to reduce many of the major problems that most people face on a day to day basis, such as, not enough time to spend with loved ones or saving money for companies that need to reduce costs or working towards saving our planet by reducing emissions.  
 
-# 2. Figures 
+# 2. Figures  
+*Figure 1: Correlation Map*
+![image](https://github.com/EliasGarciaa/DSC_232R_Group-Project/assets/29644567/3509f6fe-a6c8-4afc-b2c7-2c051fb141cd)
 
-Source: 
-*Figure 1: Feature Importance*
-![image](https://github.com/EliasGarciaa/DSC_232R_Group-Project/assets/29644567/448a0863-d0ed-4e48-9f96-c645b4b6d38e)
 
-Source: 
 *Figure 2: Severity and distribution of traffic delays*
 ![image](https://github.com/EliasGarciaa/DSC_232R_Group-Project/assets/29644567/ef679903-d5ab-416e-9635-37b56d2f07e5)
 
