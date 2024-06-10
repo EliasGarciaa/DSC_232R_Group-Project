@@ -175,7 +175,7 @@ merged_df['StartHour'] = merged_df['StartTime'].dt.hour
 - PCA was applied to the one-hot encoded weather condition data to reduce its dimensionality and generate compact vector representations for subsequent processing
 - The number of PCA components was determined by plotting the explained variance percentage for each component
 
-### Graphing the percentage of variance explained to determine how many components captures most of the data variance
+#### Graphing the percentage of variance explained to determine how many components captures most of the data variance
 ```
 pca = PCA()
 pca.fit(encoded_df)
@@ -192,7 +192,7 @@ plt.ylabel('Cumulative Variance Explained')
 plt.grid(True)
 plt.show()
 ```
-### PCA for first 40 components
+#### PCA for first 40 components
 ```
 pca = PCA(n_components= 40)
 pca_result = pca.fit_transform(encoded_df)
