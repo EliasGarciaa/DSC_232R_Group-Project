@@ -101,8 +101,6 @@ test_preds = model.predict(X_test_scaled)
 # Evaluation: Calculate RMSE
 train_rmse = np.sqrt(mean_squared_error(y_train, train_preds))
 test_rmse = np.sqrt(mean_squared_error(y_test, test_preds))
-print("Train RMSE:", train_rmse)
-print("Test RMSE:", test_rmse)
 ```
 - A Random Forest Regressor was then trained with 100 estimators. The model's performance was also evaluated using RMSE for both the training and test datasets
 ```
@@ -119,8 +117,6 @@ rf_test_preds = rf_model.predict(X_test_scaled)
 # Evaluation: Calculate RMSE
 rf_train_rmse = np.sqrt(mean_squared_error(y_train, rf_train_preds))
 rf_test_rmse = np.sqrt(mean_squared_error(y_test, rf_test_preds))
-print("Random Forest Train RMSE:", rf_train_rmse)
-print("Random Forest Test RMSE:", rf_test_rmse)
 ```
 - Finally, a Gradient Boosting Regressor with 100 estimators was trained. RMSE was calculated for both training and test sets to evaluate the model's performance
 ```
@@ -137,8 +133,6 @@ gb_test_preds = gb_model.predict(X_test_scaled)
 # Evaluation: Calculate RMSE
 gb_train_rmse = np.sqrt(mean_squared_error(y_train, gb_train_preds))
 gb_test_rmse = np.sqrt(mean_squared_error(y_test, gb_test_preds))
-print("Gradient Boosting Train RMSE:", gb_train_rmse)
-print("Gradient Boosting Test RMSE:", gb_test_rmse)
 ```
 ### Comparison of Model Performance
 - The RMSE values for the Linear Regression, Random Forest, and Gradient Boosting models were compared to evaluate how each model generalizes to new, unseen data. The models showed similar RMSE values for both the training and test datasets, indicating good generalization and minimal overfitting
@@ -147,17 +141,6 @@ print("Gradient Boosting Test RMSE:", gb_test_rmse)
 models = ['Linear Regression', 'Random Forest', 'Gradient Boosting']
 train_rmse = [1.1714642543584903, 1.1683265209258846, 1.1686818156484327]
 test_rmse = [1.1699850428341243, 1.166988589658763, 1.1671017369772374]
-
-# Plotting the fitting graph
-plt.figure(figsize=(10, 6))
-plt.plot(models, train_rmse, label='Train RMSE', marker='o', color='red')
-plt.plot(models, test_rmse, label='Test RMSE', marker='o', color='green')
-plt.xlabel('Model Complexity')
-plt.ylabel('RMSE')
-plt.title('Fitting Graph: Train vs Test Error Across Models')
-plt.legend()
-plt.grid(True)
-plt.show()
 ```
 ## 3.4 Model 2
 ### Data Preprocessing
