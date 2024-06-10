@@ -331,7 +331,7 @@ In conclusion, our research provided valuable insights into traffic congestion p
 # 7. Statement of Collaboration
 Name: Nikolai Pastore<br/>
 Title: Teammate 1<br/>
-Contribution: Created outline for project submission as well as wrote out the introduction, conclusion, and some of the methods during the finalizing of our report.  I also communicated and collaborated throughout with our team throughout the duration of the project.<br/>
+Contribution: Created outline for project submission as well as wrote out the introduction, conclusion, and some of the methods during the finalizing of our report.  I also communicated and collaborated with our team throughout the duration of the project.<br/>
 
 Name: Elias Garcia<br/>
 Title: Teammate 2<br/>
