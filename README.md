@@ -274,6 +274,7 @@ The performance of the models, as measured by RMSE, shows that all three models 
 ## 4.4 Model 2
 ### XGBoost Results:
 The XGBoost results are visualized through a plot displaying the error of the XGBoost model against the number of boosting rounds
+
 -accuracy: 65% on test set
 ![image](https://github.com/EliasGarciaa/DSC_232R_Group-Project/assets/145890463/cc2f6ec4-1c52-4356-b852-c00686c04fe4)
 
