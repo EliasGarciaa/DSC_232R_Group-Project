@@ -317,7 +317,7 @@ Contribution: <br/>
 
 Name: Elias Garcia<br/>
 Title: Teammate 2<br/>
-Contribution: <br/>
+Contribution: Wrote the majority of the code for Model 1 and authored the corresponding Methods, Results, and Discussion sections. Additionally, I provided feedback and collaborated with team members throughout the project's duration <br/>
 
 Name: Jackie Gao<br/>
 Title: Teammate 3<br/>
