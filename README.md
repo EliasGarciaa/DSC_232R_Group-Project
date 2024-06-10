@@ -272,10 +272,14 @@ The performance of the models, as measured by RMSE, shows that all three models 
 <img width="432" alt="Train vs Test Error Across Models" src="https://github.com/EliasGarciaa/DSC_232R_Group-Project/assets/168691382/0f93cebd-c9a2-455e-b601-932961c2aa51">
 
 ## 4.4 Model 2
-- 
-- 
-- 
-  
+### XGBoost Results:
+The XGBoost results are visualized through a plot displaying the error of the XGBoost model against the number of boosting rounds
+-accuracy: 65% on test set
+![image](https://github.com/EliasGarciaa/DSC_232R_Group-Project/assets/145890463/cc2f6ec4-1c52-4356-b852-c00686c04fe4)
+
+The feature importance chart showcases the key features considered most influential by XGBoost during the classification process
+![image](https://github.com/EliasGarciaa/DSC_232R_Group-Project/assets/145890463/49207ac0-95cd-44a3-8b9f-0d5249e90037)
+
 # 5. Discussion
 ## Data Exploration 
 -  Using this data set to determine severity and other important factors, such as delays due to traffic conditions, can be very insightful as we drive daily. This data set had information on all weather conditions, such as ongoing weather events, visibility, wind speed, and even precipitation. We wanted to use features that were easily measurable and had enough data to impact the models we were using significantly. In addition to weather data, the dataset included detailed information such as the time and location of the events and the amount of time it delayed their usual commute. Analyzing these aspects allowed us to identify patterns and correlations between weather conditions and traffic severity. For instance, we could determine if certain weather conditions led to more severe accidents or longer delays.
