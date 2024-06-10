@@ -180,6 +180,7 @@ merged_df['StartHour'] = merged_df['StartTime'].dt.hour
 
 ### Model Training and Evaluation
 - An XGBoost model was employed to classify the congestion speed (slow,moderate,fast) using the transformed features. The model's performance was assessed by plotting the error against the number of boosting rounds. Additionally, feature importance analysis was conducted to understand the contribution of each feature to the model's predictions
+####Model Building
 ```
 import xgboost as xgb
 from sklearn.model_selection import train_test_split
@@ -215,6 +216,7 @@ print(f"Accuracy: {accuracy}")
 # Print classification report
 print(classification_report(y_test, preds))
 ```
+####Plot Error rate
 ```
 train_error = evals_result['train']['merror']
 val_error = evals_result['eval']['merror']
@@ -233,6 +235,7 @@ plt.legend()
 plt.grid(True)
 plt.show()
 ```
+####Plot feature importance
 ```
 from xgboost import plot_importance
 import matplotlib.pyplot as plt
