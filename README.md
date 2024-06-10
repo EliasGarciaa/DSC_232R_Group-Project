@@ -294,9 +294,9 @@ The feature importance chart showcases the key features considered most influent
 - 
 
 ## Model 2
-- 
-- 
-- 
+Base on the results of the XGBoost model we can see that as the number of boosting rounds increases the error rate decreases. However, eventually at around 400 boosting rounds, the error rate on the test set begins to stabilize. Furthermore, the most impactful features were location data (longitude, latitude) and start time. This may indicate that traffic congestion is highly dependant on location and time of day which lines up with our intuition. 
+
+Some shortcomings of the model is its relatively low accuracy of 65%. This may be due to the underlying dataset being slightly biased having a skewed distribution of start times whith most being later in the day past 9:00pm. Another reason may be that the model doesn't capture enough features
 
 # 6. Conclusion
 -
